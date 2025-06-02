@@ -31,6 +31,23 @@ Optimizing inference performance for the `cerspense/zeroscope_v2_576w` video gen
 
 - `Videogen_Inference_with_CUDA_Graph.ipynb`: Complete implementation with benchmarking and profiling setup
 
+### Next Steps
+
+#### Reduce Memory Fragmentation
+Current GPU memory analysis shows high fragmentation that needs optimization:
+
+```
+GPU Memory Status (Device 0):
+  Total memory          : 15095.06 MB
+  Reserved by PyTorch    : 10104.00 MB
+  Allocated by tensors   : 3529.53 MB
+  Free inside reserved   : 6574.47 MB
+  External Fragmentation : 65.07%
+  NVML reported used mem : 11911.88 MB
+```
+
+**Target**: Reduce the 65.07% external fragmentation to improve memory efficiency and potentially enable larger batch sizes.
+
 ---
 
 *This repository demonstrates practical GPU optimization techniques that can be applied to various deep learning inference workloads to achieve significant performance improvements.*
